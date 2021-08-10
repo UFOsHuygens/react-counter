@@ -1,15 +1,17 @@
 import logo from './logo.svg';
-import { useState } from 'react';
 import './App.css';
+import { State } from './components/state'
+import { UseState } from './components/useState'
+import React, { useState } from 'react'
 
-export default function App() {
+function App() {
   const [value, setValue] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>{value}</h1>
-        <button onClick={()=>{setValue(value+1)}}>Click-me!</button>
-      </header>
+    <div>
+      <State></State>
+      <UseState title={value} action={()=>{setValue(value+1)}}></UseState>
     </div>
   );
 }
+
+export default App;
